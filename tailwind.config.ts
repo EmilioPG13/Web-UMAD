@@ -9,13 +9,14 @@ const config: Config = {
     extend: {
       colors: {
         umad: {
-          navy:        '#1B2A6B',
-          'navy-dark': '#101D4E',
-          'navy-light':'#2E4099',
-          red:         '#E31E25',
-          'red-dark':  '#B81920',
-          cream:       '#F5F3EE',
+          navy:        '#0B1F4B',
+          'navy-dark': '#07142F',
+          'navy-light':'#1A3A7A',
+          red:         '#C8102E',
+          'red-dark':  '#A00D25',
+          cream:       '#FFFFFF',
           gray:        '#6B7280',
+          graphite:    '#1A1A1A',
         }
       },
       fontFamily: {
@@ -23,7 +24,7 @@ const config: Config = {
         display: ['Poppins', 'system-ui', 'sans-serif'],
       },
       backgroundImage: {
-        'hero-gradient': 'linear-gradient(135deg, rgba(27,42,107,0.92) 0%, rgba(16,29,78,0.75) 100%)',
+        'hero-gradient': 'linear-gradient(135deg, rgba(11,31,75,0.92) 0%, rgba(7,20,47,0.75) 100%)',
       }
     },
   },

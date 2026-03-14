@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { GraduationCap, Phone, Mail, MapPin, Facebook, Instagram, Youtube } from 'lucide-react';
+import { Phone, Mail, MapPin, Facebook, Instagram, Youtube } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -10,10 +10,9 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center flex-shrink-0">
-                <GraduationCap className="w-6 h-6 text-umad-navy" />
+              <div className="bg-white rounded-lg px-3 py-1.5 inline-flex">
+                <img src="/media/logos/umad-logo.png" alt="UMAD" className="h-8 w-auto" />
               </div>
-              <span className="font-display font-bold text-xl">UMAD</span>
             </div>
             <p className="text-white/70 text-sm leading-relaxed mb-4">
               Universidad Madero — Formando líderes con valores desde 1975. Comprometidos con la excelencia académica y el desarrollo humano integral.

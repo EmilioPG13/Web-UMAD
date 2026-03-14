@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, GraduationCap } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const navLinks = [
@@ -35,13 +35,10 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 flex-shrink-0">
-            <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center">
-              <GraduationCap className="w-6 h-6 text-umad-navy" />
+          <Link to="/" className="flex items-center flex-shrink-0">
+            <div className="bg-white rounded-lg px-3 py-1.5">
+              <img src="/media/logos/umad-logo.png" alt="UMAD" className="h-8 w-auto" />
             </div>
-            <span className="font-display font-bold text-white text-xl tracking-tight">
-              UMAD
-            </span>
           </Link>
 
           {/* Desktop nav */}
