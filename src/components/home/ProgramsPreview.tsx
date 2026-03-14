@@ -1,12 +1,33 @@
+import { useRef } from 'react';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import SectionHeading from '../ui/SectionHeading';
 import FlipCard from '../programs/FlipCard';
-import ScrollReveal from '../ui/ScrollReveal';
 import { programs } from '../../data/programs';
+
+gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 export default function ProgramsPreview() {
   const featured = programs.filter(p => p.featured).slice(0, 4);
+  const gridRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(() => {
+    gsap.from(Array.from(gridRef.current!.children) as HTMLElement[], {
+      opacity: 0,
+      y: 50,
+      duration: 0.7,
+      stagger: 0.1,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: gridRef.current,
+        start: 'top 80%',
+        once: true,
+      },
+    });
+  }, { scope: gridRef });
 
   return (
     <section className="py-20 bg-white">
@@ -24,11 +45,9 @@ export default function ProgramsPreview() {
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {featured.map((program, i) => (
-            <ScrollReveal key={program.id} delay={i * 0.1}>
-              <FlipCard program={program} />
-            </ScrollReveal>
+        <div ref={gridRef} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {featured.map((program) => (
+            <FlipCard key={program.id} program={program} />
           ))}
         </div>
       </div>

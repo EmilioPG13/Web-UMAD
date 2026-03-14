@@ -1,10 +1,32 @@
+import { useRef } from 'react';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { motion } from 'framer-motion';
 import { BookOpen, Calculator } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
+gsap.registerPlugin(ScrollTrigger, useGSAP);
+
 export default function HeroSection() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const badgeRef   = useRef<HTMLDivElement>(null);
+  const titleRef   = useRef<HTMLHeadingElement>(null);
+  const subtitleRef = useRef<HTMLParagraphElement>(null);
+  const ctaRef     = useRef<HTMLDivElement>(null);
+
+  useGSAP(() => {
+    const trigger = { trigger: sectionRef.current, start: 'top bottom' };
+    const ease    = 'power2.out';
+
+    gsap.from(badgeRef.current,    { opacity: 0, y: 40, scale: 0.8, duration: 0.9, delay: 0,    ease, scrollTrigger: trigger });
+    gsap.from(titleRef.current,    { opacity: 0, y: 40,             duration: 0.9, delay: 0,    ease, scrollTrigger: trigger });
+    gsap.from(subtitleRef.current, { opacity: 0, y: 40,             duration: 0.9, delay: 0.15, ease, scrollTrigger: trigger });
+    gsap.from(ctaRef.current,      { opacity: 0, y: 40,             duration: 0.9, delay: 0.3,  ease, scrollTrigger: trigger });
+  }, { scope: sectionRef });
+
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
+    <section ref={sectionRef} className="relative min-h-screen flex items-center overflow-hidden">
       {/* Background gradient (fallback / overlay) */}
       <div className="absolute inset-0 bg-gradient-to-br from-umad-navy-dark via-umad-navy to-umad-navy-light" />
 
@@ -24,42 +46,34 @@ export default function HeroSection() {
         <div className="max-w-3xl">
 
           {/* Tag */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+          <div
+            ref={badgeRef}
             className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-1.5 mb-6"
           >
             <span className="w-2 h-2 bg-umad-red rounded-full animate-pulse" />
             <span className="text-white/90 text-sm font-medium">Admisiones abiertas 2026</span>
-          </motion.div>
+          </div>
 
           {/* Headline */}
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
+          <h1
+            ref={titleRef}
             className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-white leading-tight mb-6"
           >
             Construye tu futuro{' '}
             <span className="text-umad-red">con propósito</span>
-          </motion.h1>
+          </h1>
 
           {/* Sub */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+          <p
+            ref={subtitleRef}
             className="text-white/80 text-lg lg:text-xl leading-relaxed mb-10 max-w-xl"
           >
             Más de 50 años formando profesionistas comprometidos. Explora nuestras licenciaturas, posgrados y programa de becas diseñado para ti.
-          </motion.p>
+          </p>
 
           {/* CTAs */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+          <div
+            ref={ctaRef}
             className="flex flex-col sm:flex-row gap-4"
           >
             <Link
@@ -76,7 +90,7 @@ export default function HeroSection() {
               <Calculator className="w-5 h-5" />
               Calcular mi beca
             </Link>
-          </motion.div>
+          </div>
 
           {/* Quick stats */}
           <motion.div
