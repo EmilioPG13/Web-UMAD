@@ -1,17 +1,17 @@
 import type { Program } from '../types';
 
 export const programs: Program[] = [
-  // ── DERECHO ──────────────────────────────────────────────
+  // ── INGENIERÍA ───────────────────────────────────────────
   {
-    id: 'lic-derecho',
-    name: 'Licenciatura en Derecho',
-    shortName: 'Derecho',
-    faculty: 'Derecho',
+    id: 'lic-ingenieria',
+    name: 'Licenciatura en Ingeniería',
+    shortName: 'Ingeniería',
+    faculty: 'Ingeniería y Tecnología',
     level: 'Licenciatura',
     modalities: ['Presencial', 'En línea'],
     durationSemesters: 9,
-    description: 'Forma abogados con sólida preparación en áreas civil, penal, mercantil y constitucional, con enfoque en la resolución de conflictos y la defensa de los derechos humanos.',
-    accentColor: 'bg-blue-700',
+    description: 'Forma profesionistas con sólida base en ciencias aplicadas, innovación tecnológica y resolución de problemas para la industria y la sociedad.',
+    accentColor: 'bg-cyan-600',
     featured: true,
   },
   {
