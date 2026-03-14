@@ -1,5 +1,17 @@
 import { useState } from 'react';
-import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Youtube, Send } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Linkedin, Send } from 'lucide-react';
+
+const XIcon = () => (
+  <svg viewBox="0 0 24 24" className="w-5 h-5" fill="currentColor">
+    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.253 5.622L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z" />
+  </svg>
+);
+
+const TikTokIcon = () => (
+  <svg viewBox="0 0 24 24" className="w-5 h-5" fill="currentColor">
+    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.26 8.26 0 0 0 4.84 1.56V6.79a4.85 4.85 0 0 1-1.07-.1z" />
+  </svg>
+);
 import PageWrapper from '../components/layout/PageWrapper';
 import SectionHeading from '../components/ui/SectionHeading';
 import ScrollReveal from '../components/ui/ScrollReveal';
@@ -68,9 +80,8 @@ export default function ContactoPage() {
           <ScrollReveal>
             <div className="space-y-6">
               {[
-                { icon: MapPin, label: 'Dirección', value: 'Av. Universidad Madero 555, Col. La Paz, Puebla, Pue. C.P. 72160' },
-                { icon: Phone, label: 'Teléfono', value: '(222) 237-5544' },
-                { icon: Mail, label: 'Correo', value: 'informes@umad.edu.mx' },
+                { icon: MapPin, label: 'Dirección', value: 'Camino Real a Cholula 4212, Col. Exhacienda La Concepción Buenavista, C.P. 72150, Puebla, México.' },
+                { icon: Mail, label: 'Correo', value: 'admision@umad.edu.mx' },
               ].map(info => (
                 <div key={info.label} className="flex gap-4 items-start">
                   <div className="w-12 h-12 bg-umad-navy rounded-xl flex items-center justify-center flex-shrink-0">
@@ -85,6 +96,17 @@ export default function ContactoPage() {
 
               <div className="flex gap-4 items-start">
                 <div className="w-12 h-12 bg-umad-navy rounded-xl flex items-center justify-center flex-shrink-0">
+                  <Phone className="w-5 h-5 text-white" />
+                </div>
+                <div>
+                  <p className="text-xs text-gray-400 uppercase tracking-wider">Teléfono</p>
+                  <p className="text-umad-navy font-medium mt-0.5">(+52) 222 141 59 59</p>
+                  <p className="text-umad-navy font-medium">(+52) 222 141 59 62</p>
+                </div>
+              </div>
+
+              <div className="flex gap-4 items-start">
+                <div className="w-12 h-12 bg-umad-navy rounded-xl flex items-center justify-center flex-shrink-0">
                   <Clock className="w-5 h-5 text-white" />
                 </div>
                 <div>
@@ -96,18 +118,28 @@ export default function ContactoPage() {
 
               {/* Social */}
               <div className="flex gap-3 pt-2">
-                {[Facebook, Instagram, Youtube].map((Icon, i) => (
-                  <a key={i} href="#" className="w-10 h-10 bg-umad-navy hover:bg-umad-red rounded-xl flex items-center justify-center transition-colors">
-                    <Icon className="w-5 h-5 text-white" />
-                  </a>
-                ))}
+                <a href="https://www.facebook.com/universidadmaderopuebla" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="w-10 h-10 bg-umad-navy hover:bg-umad-red rounded-xl flex items-center justify-center transition-colors">
+                  <Facebook className="w-5 h-5 text-white" />
+                </a>
+                <a href="https://x.com/umadpuebla" target="_blank" rel="noopener noreferrer" aria-label="X" className="w-10 h-10 bg-umad-navy hover:bg-umad-red rounded-xl flex items-center justify-center transition-colors text-white">
+                  <XIcon />
+                </a>
+                <a href="https://www.linkedin.com/school/universidad-madero/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="w-10 h-10 bg-umad-navy hover:bg-umad-red rounded-xl flex items-center justify-center transition-colors">
+                  <Linkedin className="w-5 h-5 text-white" />
+                </a>
+                <a href="https://www.instagram.com/umadpuebla" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="w-10 h-10 bg-umad-navy hover:bg-umad-red rounded-xl flex items-center justify-center transition-colors">
+                  <Instagram className="w-5 h-5 text-white" />
+                </a>
+                <a href="https://www.tiktok.com/@umadpuebla" target="_blank" rel="noopener noreferrer" aria-label="TikTok" className="w-10 h-10 bg-umad-navy hover:bg-umad-red rounded-xl flex items-center justify-center transition-colors text-white">
+                  <TikTokIcon />
+                </a>
               </div>
 
               {/* Map */}
               <div className="rounded-2xl overflow-hidden border border-gray-200 aspect-video mt-4">
                 <iframe
                   title="Ubicación UMAD"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.87!2d-98.2!3d19.05!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnCsDAzJzAwLjAiTiA5OMKwMTInMDAuMCJX!5e0!3m2!1ses!2smx!4v1"
+                  src="https://maps.google.com/maps?q=Universidad+Madero+Camino+Real+a+Cholula+4212+Puebla+Mexico&output=embed"
                   className="w-full h-full"
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
