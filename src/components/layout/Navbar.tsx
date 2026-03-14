@@ -29,28 +29,24 @@ export default function Navbar() {
     const el = headerRef.current;
     if (!el) return;
 
-    // Set initial background based on current route
+    // Always white background; shadow intensifies on scroll
     gsap.set(el, {
-      backgroundColor: isHome ? 'rgba(0, 0, 0, 0)' : 'rgba(11, 31, 75, 0.97)',
-      boxShadow: isHome ? 'none' : '0 4px 24px rgba(0,0,0,0.3)',
+      backgroundColor: 'rgba(255, 255, 255, 1)',
+      boxShadow: '0 1px 3px rgba(0,0,0,0.06)',
     });
-
-    if (!isHome) return;
 
     const st = ScrollTrigger.create({
       start: 60,
       onEnter: () =>
         gsap.to(el, {
-          backgroundColor: 'rgba(11, 31, 75, 0.97)',
-          boxShadow: '0 4px 24px rgba(0,0,0,0.3)',
+          boxShadow: '0 4px 16px rgba(0,0,0,0.12)',
           duration: 0.3,
           ease: 'power2.out',
           overwrite: 'auto',
         }),
       onLeaveBack: () =>
         gsap.to(el, {
-          backgroundColor: 'rgba(0, 0, 0, 0)',
-          boxShadow: 'none',
+          boxShadow: '0 1px 3px rgba(0,0,0,0.06)',
           duration: 0.3,
           ease: 'power2.out',
           overwrite: 'auto',
@@ -61,26 +57,24 @@ export default function Navbar() {
   }, { dependencies: [isHome] });
 
   return (
-    <header ref={headerRef} className="fixed top-0 left-0 right-0 z-50">
+    <header ref={headerRef} className="fixed top-0 left-0 right-0 z-50 border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 lg:h-20">
+        <div className="flex items-center justify-between h-16 lg:h-18">
           {/* Logo */}
           <Link to="/" className="flex items-center flex-shrink-0">
-            <div className="bg-white rounded-lg px-3 py-1.5">
-              <img src="/media/logos/umad-logo.png" alt="UMAD" className="h-8 w-auto" />
-            </div>
+            <img src="/media/logos/umad-logo.png" alt="UMAD" className="h-10 lg:h-12 w-auto" />
           </Link>
 
           {/* Desktop nav */}
-          <nav className="hidden lg:flex items-center gap-1">
+          <nav className="hidden lg:flex items-center gap-8">
             {navLinks.map(link => (
               <Link
                 key={link.to}
                 to={link.to}
-                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                className={`text-sm transition-colors ${
                   location.pathname === link.to
-                    ? 'text-umad-red bg-white/10'
-                    : 'text-white/90 hover:text-white hover:bg-white/10'
+                    ? 'text-red-600 font-semibold'
+                    : 'text-gray-800 font-medium hover:text-red-600'
                 }`}
               >
                 {link.label}
@@ -92,13 +86,13 @@ export default function Navbar() {
           <div className="flex items-center gap-3">
             <Link
               to="/admisiones"
-              className="hidden lg:inline-flex items-center px-4 py-2 bg-umad-red hover:bg-umad-red-dark text-white font-semibold text-sm rounded-lg transition-colors"
+              className="hidden lg:inline-flex items-center px-5 py-2.5 bg-red-600 hover:bg-red-700 text-white font-semibold text-sm rounded-lg transition-colors"
             >
               Inscríbete
             </Link>
             <button
               onClick={() => setOpen(v => !v)}
-              className="lg:hidden p-2 rounded-md text-white hover:bg-white/10 transition-colors"
+              className="lg:hidden p-2 rounded-md text-gray-700 hover:bg-gray-100 transition-colors"
               aria-label="Abrir menú"
             >
               {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -115,7 +109,7 @@ export default function Navbar() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.25 }}
-            className="lg:hidden bg-umad-navy-dark border-t border-white/10 overflow-hidden"
+            className="lg:hidden bg-white border-t border-gray-100 overflow-hidden"
           >
             <div className="px-4 py-4 flex flex-col gap-1">
               {navLinks.map(link => (
@@ -124,8 +118,8 @@ export default function Navbar() {
                   to={link.to}
                   className={`px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
                     location.pathname === link.to
-                      ? 'bg-umad-red text-white'
-                      : 'text-white/90 hover:bg-white/10 hover:text-white'
+                      ? 'bg-red-50 text-red-600 font-semibold'
+                      : 'text-gray-800 hover:bg-gray-50 hover:text-red-600'
                   }`}
                 >
                   {link.label}
@@ -133,7 +127,7 @@ export default function Navbar() {
               ))}
               <Link
                 to="/admisiones"
-                className="mt-2 px-4 py-3 bg-umad-red text-white font-semibold text-sm rounded-lg text-center"
+                className="mt-2 px-4 py-3 bg-red-600 text-white font-semibold text-sm rounded-lg text-center"
               >
                 Inscríbete ahora
               </Link>
