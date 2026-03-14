@@ -10,11 +10,12 @@ interface Props {
 
 const faculties: Filter[] = [
   ALL,
-  'Derecho',
-  'Ingeniería y Tecnología',
-  'Ciencias de la Salud',
-  'Negocios y Administración',
-  'Humanidades y Educación',
+  'Ingenierías',
+  'Arte y Humanidades',
+  'Negocios',
+  'Ciencias Sociales',
+  'Comercio y Derecho',
+  'Posgrados en Línea',
 ];
 
 export default function FacultyFilter({ active, onChange }: Props) {

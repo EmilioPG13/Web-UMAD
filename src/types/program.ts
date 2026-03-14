@@ -1,11 +1,12 @@
 export type Modality = 'Presencial' | 'En línea' | 'Mixto';
 
 export type Faculty =
-  | 'Derecho'
-  | 'Ingeniería y Tecnología'
-  | 'Ciencias de la Salud'
-  | 'Negocios y Administración'
-  | 'Humanidades y Educación';
+  | 'Ingenierías'
+  | 'Arte y Humanidades'
+  | 'Negocios'
+  | 'Ciencias Sociales'
+  | 'Comercio y Derecho'
+  | 'Posgrados en Línea';
 
 export type ProgramLevel = 'Licenciatura' | 'Maestría' | 'Doctorado' | 'TSU';
 
