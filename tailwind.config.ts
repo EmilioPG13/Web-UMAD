@@ -14,6 +14,7 @@ const config: Config = {
           'navy-light':'#1A3A7A',
           red:         '#C8102E',
           'red-dark':  '#A00D25',
+          gold:        '#C89B3C',
           cream:       '#FFFFFF',
           gray:        '#6B7280',
           graphite:    '#1A1A1A',
