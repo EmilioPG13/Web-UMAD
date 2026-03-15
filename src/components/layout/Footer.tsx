@@ -116,7 +116,7 @@ export default function Footer() {
               <a href="https://www.facebook.com/umadpuebla" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="hover:text-white transition-colors">
                 <Facebook className="w-5 h-5" />
               </a>
-              <a href="https://x.com/umadpuebla" target="_blank" rel="noopener noreferrer" aria-label="X" className="hover:text-white transition-colors">
+              <a href="https://twitter.com/umadpuebla" target="_blank" rel="noopener noreferrer" aria-label="X" className="hover:text-white transition-colors">
                 <XIcon />
               </a>
               <a href="https://www.linkedin.com/school/universidad-madero/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:text-white transition-colors">

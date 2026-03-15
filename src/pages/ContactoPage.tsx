@@ -139,11 +139,11 @@ export default function ContactoPage() {
 
               {/* Social — iconos flotantes con color de marca en hover */}
               <div className="flex items-center gap-1 pt-1">
-                <a href="https://www.facebook.com/universidadmaderopuebla" target="_blank" rel="noopener noreferrer" aria-label="Facebook"
+                <a href="https://www.facebook.com/umadpuebla" target="_blank" rel="noopener noreferrer" aria-label="Facebook"
                   className="p-2.5 rounded-xl text-gray-400 hover:text-[#1877F2] hover:bg-blue-50 transition-all duration-200 hover:scale-110">
                   <FacebookIcon />
                 </a>
-                <a href="https://x.com/umadpuebla" target="_blank" rel="noopener noreferrer" aria-label="X"
+                <a href="https://twitter.com/umadpuebla" target="_blank" rel="noopener noreferrer" aria-label="X"
                   className="p-2.5 rounded-xl text-gray-400 hover:text-gray-900 hover:bg-gray-100 transition-all duration-200 hover:scale-110">
                   <XIcon />
                 </a>

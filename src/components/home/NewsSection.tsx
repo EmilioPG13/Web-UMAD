@@ -1,13 +1,8 @@
-import { useRef } from 'react';
-import { useGSAP } from '@gsap/react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { motion } from 'framer-motion';
 import { Calendar, ArrowRight } from 'lucide-react';
 import SectionHeading from '../ui/SectionHeading';
 import Badge from '../ui/Badge';
 import { newsArticles } from '../../data/news';
-
-gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 const categoryColors: Record<string, string> = {
   Noticias: 'bg-umad-navy',
@@ -22,23 +17,6 @@ function formatDate(iso: string) {
 
 export default function NewsSection() {
   const articles = newsArticles.slice(0, 3);
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  useGSAP(() => {
-    const cards = gsap.utils.toArray<HTMLElement>('.news-card', containerRef.current!);
-    gsap.from(cards, {
-      opacity: 0,
-      y: 30,
-      duration: 0.7,
-      stagger: 0.15,
-      ease: 'power2.out',
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: 'top 80%',
-        once: true,
-      },
-    });
-  }, { scope: containerRef });
 
   return (
     <section className="py-20 bg-umad-cream">
@@ -47,11 +25,15 @@ export default function NewsSection() {
           <SectionHeading title="Noticias y eventos" subtitle="Mantente al día con la vida universitaria de UMAD." />
         </div>
 
-        <div ref={containerRef} className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {articles.map(article => (
-            <article
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {articles.map((article, i) => (
+            <motion.article
               key={article.id}
-              className="news-card bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow group flex flex-col"
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-40px' }}
+              transition={{ duration: 0.55, delay: i * 0.1 }}
+              className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow group flex flex-col"
             >
               <div className="aspect-video overflow-hidden">
                 <img
@@ -84,7 +66,7 @@ export default function NewsSection() {
                   Leer más <ArrowRight className="w-3.5 h-3.5" />
                 </a>
               </div>
-            </article>
+            </motion.article>
           ))}
         </div>
       </div>
