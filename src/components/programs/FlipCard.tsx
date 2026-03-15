@@ -27,8 +27,21 @@ export default function FlipCard({ program, delay = 0 }: Props) {
       >
         {/* FRONT */}
         <div className="absolute inset-0 backface-hidden rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow">
-          <div className={`absolute inset-0 ${program.accentColor} opacity-90`} />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+          <div className="absolute inset-0 rounded-2xl overflow-hidden">
+            {program.imageUrl ? (
+              <img
+                src={program.imageUrl}
+                alt={program.name}
+                className="w-full h-full object-cover"
+                onError={(e) => {
+                  e.currentTarget.style.display = 'none';
+                  e.currentTarget.nextElementSibling?.classList.remove('hidden');
+                }}
+              />
+            ) : null}
+            <div className={`w-full h-full ${program.accentColor} ${program.imageUrl ? 'hidden' : ''}`} />
+          </div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
           <div className="absolute inset-0 p-6 flex flex-col justify-end">
             <Badge label={program.faculty} colorClass="bg-white/20 backdrop-blur-sm mb-2" />
             <h3 className="font-display font-bold text-white text-lg leading-snug">

@@ -57,6 +57,9 @@ export default function NewsSection() {
                 src={featured.imageUrl}
                 alt={featured.title}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                onError={(e) => {
+                  e.currentTarget.src = 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&q=80';
+                }}
               />
             </div>
             <div className="p-6">
@@ -89,6 +92,9 @@ export default function NewsSection() {
                     src={article.imageUrl}
                     alt={article.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    onError={(e) => {
+                      e.currentTarget.src = 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&q=80';
+                    }}
                   />
                 </div>
                 <div className="p-5">

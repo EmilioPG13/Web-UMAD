@@ -25,8 +25,18 @@ export default function HeroSection() {
 
   return (
     <section ref={sectionRef} className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Background gradient (fallback / overlay) */}
-      <div className="absolute inset-0 bg-gradient-to-br from-umad-navy-dark via-umad-navy to-umad-navy-light" />
+      {/* Background image + overlay */}
+      <div
+        className="absolute inset-0 z-0 bg-umad-navy-dark"
+        style={{
+          backgroundImage:
+            'url("https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1920&q=80")',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      >
+        <div className="absolute inset-0 bg-umad-navy/70" />
+      </div>
 
       {/* Decorative shapes */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-umad-red/10 rounded-full blur-3xl" />

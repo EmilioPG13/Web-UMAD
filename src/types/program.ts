@@ -31,6 +31,7 @@ export interface Program {
   durationSemesters: number;
   description: string;
   accentColor: string;
+  imageUrl?: string;
   featured: boolean;
   rvoeCode?: string;
 }
