@@ -88,7 +88,7 @@ export default function Footer() {
           </div>
 
           {/* Right: Contact */}
-          <div>
+          <div className="lg:ml-auto lg:w-full lg:max-w-md">
             <h2 className="font-display font-semibold text-lg text-white mb-6">
               Contacto
             </h2>
