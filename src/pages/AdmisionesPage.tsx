@@ -1,4 +1,4 @@
-import { MessageCircle, ClipboardList, FileText, PenLine, CheckCircle, GraduationCap } from 'lucide-react';
+import { MessageCircle, CreditCard, FileText, PenLine, CheckCircle } from 'lucide-react';
 import PageWrapper from '../components/layout/PageWrapper';
 import SectionHeading from '../components/ui/SectionHeading';
 import ScrollReveal from '../components/ui/ScrollReveal';
@@ -6,7 +6,7 @@ import { admissionSteps } from '../data/admissions';
 import { Link } from 'react-router-dom';
 
 const iconMap: Record<string, React.ElementType> = {
-  MessageCircle, ClipboardList, FileText, PenLine, CheckCircle, GraduationCap,
+  MessageCircle, CreditCard, FileText, PenLine, CheckCircle,
 };
 
 export default function AdmisionesPage() {
@@ -17,7 +17,7 @@ export default function AdmisionesPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             title="Proceso de Admisión"
-            subtitle="Tu camino a UMAD en 6 pasos simples. Sin complicaciones, sin burocracia innecesaria."
+            subtitle="Tu camino a UMAD en pasos simples. Sin complicaciones, sin burocracia innecesaria."
             light
           />
         </div>
@@ -25,7 +25,7 @@ export default function AdmisionesPage() {
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
 
-        {/* Timeline */}
+        {/* Timeline — Licenciatura */}
         <div className="relative">
           {/* Vertical line */}
           <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gray-200 hidden sm:block" />
@@ -57,26 +57,54 @@ export default function AdmisionesPage() {
           </div>
         </div>
 
-        {/* Documents list */}
+        {/* Documents list — Licenciatura */}
         <ScrollReveal>
           <div className="mt-16 bg-umad-navy rounded-2xl p-8 text-white">
-            <h3 className="font-display font-bold text-xl mb-4">Documentos requeridos</h3>
+            <h3 className="font-display font-bold text-xl mb-4">Documentos requeridos — Licenciatura</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {[
                 'Certificado de bachillerato (original y copia)',
                 'CURP (original y copia)',
                 'Acta de nacimiento (original y copia)',
-                '4 fotografías tamaño infantil en blanco y negro',
                 'Identificación oficial (INE o pasaporte)',
-                'Comprobante de domicilio reciente',
-                'Solicitud de admisión llenada',
-                'Resultado del examen de admisión EXANI-II',
               ].map(doc => (
                 <div key={doc} className="flex items-start gap-2">
                   <CheckCircle className="w-4 h-4 text-umad-red flex-shrink-0 mt-0.5" />
                   <span className="text-white/80 text-sm">{doc}</span>
                 </div>
               ))}
+            </div>
+          </div>
+        </ScrollReveal>
+
+        {/* Proceso Maestrías */}
+        <ScrollReveal delay={0.1}>
+          <div className="mt-8 bg-white rounded-2xl border border-gray-200 p-8">
+            <div className="w-10 h-1 bg-umad-red rounded-full mb-4" />
+            <h3 className="font-display font-bold text-umad-navy text-xl mb-2">Proceso para Maestrías</h3>
+            <p className="text-gray-500 text-sm mb-6 leading-relaxed">
+              El proceso de ingreso a programas de posgrado requiere documentación adicional que acredite tu grado previo.
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
+              {[
+                'Acta de nacimiento original',
+                'Copia del Título de Licenciatura',
+                'Copia de Cédula Profesional',
+                'CURP vigente',
+              ].map(doc => (
+                <div key={doc} className="flex items-start gap-2">
+                  <CheckCircle className="w-4 h-4 text-umad-red flex-shrink-0 mt-0.5" />
+                  <span className="text-gray-700 text-sm">{doc}</span>
+                </div>
+              ))}
+            </div>
+
+            <div className="bg-gray-50 rounded-xl px-4 py-3">
+              <p className="text-xs text-gray-500 leading-relaxed">
+                <span className="font-semibold text-umad-navy">Pago de inscripción:</span> En caja UMAD con tarjeta de débito o crédito.
+                Horario de caja: lunes a viernes 8:00–16:00 hrs.
+              </p>
             </div>
           </div>
         </ScrollReveal>
