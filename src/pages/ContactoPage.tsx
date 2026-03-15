@@ -1,5 +1,17 @@
 import { useState } from 'react';
-import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Linkedin, Send } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, Linkedin, Send } from 'lucide-react';
+
+const FacebookIcon = () => (
+  <svg viewBox="0 0 24 24" className="w-5 h-5" fill="currentColor">
+    <path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047v-2.66c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.971h-1.513c-1.491 0-1.956.93-1.956 1.886v2.264h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z" />
+  </svg>
+);
+
+const InstagramIcon = () => (
+  <svg viewBox="0 0 24 24" className="w-5 h-5" fill="currentColor">
+    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z" />
+  </svg>
+);
 
 const XIcon = () => (
   <svg viewBox="0 0 24 24" className="w-5 h-5" fill="currentColor">
@@ -78,59 +90,73 @@ export default function ContactoPage() {
 
           {/* Left — Info */}
           <ScrollReveal>
-            <div className="space-y-6">
-              {[
-                { icon: MapPin, label: 'Dirección', value: 'Camino Real a Cholula 4212, Col. Exhacienda La Concepción Buenavista, C.P. 72150, Puebla, México.' },
-                { icon: Mail, label: 'Correo', value: 'admision@umad.edu.mx' },
-              ].map(info => (
-                <div key={info.label} className="flex gap-4 items-start">
-                  <div className="w-12 h-12 bg-umad-navy rounded-xl flex items-center justify-center flex-shrink-0">
-                    <info.icon className="w-5 h-5 text-white" />
-                  </div>
-                  <div>
-                    <p className="text-xs text-gray-400 uppercase tracking-wider">{info.label}</p>
-                    <p className="text-umad-navy font-medium mt-0.5">{info.value}</p>
-                  </div>
-                </div>
-              ))}
-
+            <div className="space-y-7">
+              {/* Dirección */}
               <div className="flex gap-4 items-start">
-                <div className="w-12 h-12 bg-umad-navy rounded-xl flex items-center justify-center flex-shrink-0">
-                  <Phone className="w-5 h-5 text-white" />
+                <div className="w-10 h-10 rounded-2xl bg-umad-navy/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <MapPin className="w-5 h-5 text-umad-navy" />
                 </div>
                 <div>
-                  <p className="text-xs text-gray-400 uppercase tracking-wider">Teléfono</p>
-                  <p className="text-umad-navy font-medium mt-0.5">(+52) 222 141 59 59</p>
-                  <p className="text-umad-navy font-medium">(+52) 222 141 59 62</p>
+                  <p className="text-xs text-gray-400 uppercase tracking-wider mb-0.5">Dirección</p>
+                  <p className="text-gray-800 leading-snug">Camino Real a Cholula 4212, Col. Exhacienda La Concepción Buenavista, C.P. 72150, Puebla, México.</p>
                 </div>
               </div>
 
+              {/* Correo */}
               <div className="flex gap-4 items-start">
-                <div className="w-12 h-12 bg-umad-navy rounded-xl flex items-center justify-center flex-shrink-0">
-                  <Clock className="w-5 h-5 text-white" />
+                <div className="w-10 h-10 rounded-2xl bg-umad-navy/10 flex items-center justify-center flex-shrink-0">
+                  <Mail className="w-5 h-5 text-umad-navy" />
                 </div>
                 <div>
-                  <p className="text-xs text-gray-400 uppercase tracking-wider">Horario de atención</p>
-                  <p className="text-umad-navy font-medium mt-0.5">Lun–Vie: 9:00 – 18:00 hrs</p>
-                  <p className="text-umad-navy font-medium">Sábados: 9:00 – 13:00 hrs</p>
+                  <p className="text-xs text-gray-400 uppercase tracking-wider mb-0.5">Correo</p>
+                  <a href="mailto:admision@umad.edu.mx" className="text-gray-800 hover:text-umad-red transition-colors">admision@umad.edu.mx</a>
                 </div>
               </div>
 
-              {/* Social */}
-              <div className="flex gap-3 pt-2">
-                <a href="https://www.facebook.com/universidadmaderopuebla" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="w-10 h-10 bg-umad-navy hover:bg-umad-red rounded-xl flex items-center justify-center transition-colors">
-                  <Facebook className="w-5 h-5 text-white" />
+              {/* Teléfono */}
+              <div className="flex gap-4 items-start">
+                <div className="w-10 h-10 rounded-2xl bg-umad-navy/10 flex items-center justify-center flex-shrink-0">
+                  <Phone className="w-5 h-5 text-umad-navy" />
+                </div>
+                <div>
+                  <p className="text-xs text-gray-400 uppercase tracking-wider mb-0.5">Teléfono</p>
+                  <a href="tel:+522221415959" className="block text-gray-800 hover:text-umad-red transition-colors">(+52) 222 141 59 59</a>
+                  <a href="tel:+522221415962" className="block text-gray-800 hover:text-umad-red transition-colors">(+52) 222 141 59 62</a>
+                </div>
+              </div>
+
+              {/* Horario */}
+              <div className="flex gap-4 items-start">
+                <div className="w-10 h-10 rounded-2xl bg-umad-navy/10 flex items-center justify-center flex-shrink-0">
+                  <Clock className="w-5 h-5 text-umad-navy" />
+                </div>
+                <div>
+                  <p className="text-xs text-gray-400 uppercase tracking-wider mb-0.5">Horario de atención</p>
+                  <p className="text-gray-800">Lun–Vie: 9:00 – 18:00 hrs</p>
+                  <p className="text-gray-800">Sábados: 9:00 – 13:00 hrs</p>
+                </div>
+              </div>
+
+              {/* Social — iconos flotantes con color de marca en hover */}
+              <div className="flex items-center gap-1 pt-1">
+                <a href="https://www.facebook.com/universidadmaderopuebla" target="_blank" rel="noopener noreferrer" aria-label="Facebook"
+                  className="p-2.5 rounded-xl text-gray-400 hover:text-[#1877F2] hover:bg-blue-50 transition-all duration-200 hover:scale-110">
+                  <FacebookIcon />
                 </a>
-                <a href="https://x.com/umadpuebla" target="_blank" rel="noopener noreferrer" aria-label="X" className="w-10 h-10 bg-umad-navy hover:bg-umad-red rounded-xl flex items-center justify-center transition-colors text-white">
+                <a href="https://x.com/umadpuebla" target="_blank" rel="noopener noreferrer" aria-label="X"
+                  className="p-2.5 rounded-xl text-gray-400 hover:text-gray-900 hover:bg-gray-100 transition-all duration-200 hover:scale-110">
                   <XIcon />
                 </a>
-                <a href="https://www.linkedin.com/school/universidad-madero/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="w-10 h-10 bg-umad-navy hover:bg-umad-red rounded-xl flex items-center justify-center transition-colors">
-                  <Linkedin className="w-5 h-5 text-white" />
+                <a href="https://www.linkedin.com/school/universidad-madero/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"
+                  className="p-2.5 rounded-xl text-gray-400 hover:text-[#0A66C2] hover:bg-blue-50 transition-all duration-200 hover:scale-110">
+                  <Linkedin className="w-5 h-5" />
                 </a>
-                <a href="https://www.instagram.com/umadpuebla" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="w-10 h-10 bg-umad-navy hover:bg-umad-red rounded-xl flex items-center justify-center transition-colors">
-                  <Instagram className="w-5 h-5 text-white" />
+                <a href="https://www.instagram.com/umadpuebla" target="_blank" rel="noopener noreferrer" aria-label="Instagram"
+                  className="p-2.5 rounded-xl text-gray-400 hover:text-[#E1306C] hover:bg-pink-50 transition-all duration-200 hover:scale-110">
+                  <InstagramIcon />
                 </a>
-                <a href="https://www.tiktok.com/@umadpuebla" target="_blank" rel="noopener noreferrer" aria-label="TikTok" className="w-10 h-10 bg-umad-navy hover:bg-umad-red rounded-xl flex items-center justify-center transition-colors text-white">
+                <a href="https://www.tiktok.com/@umadpuebla" target="_blank" rel="noopener noreferrer" aria-label="TikTok"
+                  className="p-2.5 rounded-xl text-gray-400 hover:text-gray-900 hover:bg-gray-100 transition-all duration-200 hover:scale-110">
                   <TikTokIcon />
                 </a>
               </div>
@@ -183,11 +209,48 @@ export default function ContactoPage() {
                   <label className="block text-sm font-medium text-gray-700 mb-1">Me interesa</label>
                   <select name="interest" value={form.interest} onChange={handleChange} className="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-umad-navy focus:border-umad-navy bg-white">
                     <option value="">Selecciona una opción</option>
-                    <option>Licenciatura</option>
-                    <option>Maestría / Doctorado</option>
-                    <option>CEL — Idiomas</option>
-                    <option>Información de becas</option>
-                    <option>Educación continua</option>
+                    <optgroup label="── Licenciaturas Presenciales ──">
+                      <option>Ingeniería de Software</option>
+                      <option>Seguridad Informática y Redes</option>
+                      <option>Ingeniería Industrial y Rentabilidad de Negocios</option>
+                      <option>Ingeniería en Mecatrónica</option>
+                      <option>Ingeniería en Diseño Industrial</option>
+                      <option>Diseño y Negocios de la Moda</option>
+                      <option>Diseño Digital</option>
+                      <option>Imagen y Relaciones Públicas</option>
+                      <option>Comunicación y Multimedia</option>
+                      <option>Arquitectura e Interiorismo</option>
+                      <option>Administración e Innovación de Negocios</option>
+                      <option>Finanzas, Banca e Inversiones Estratégicas</option>
+                      <option>Mercadotecnia</option>
+                      <option>Lenguas Extranjeras</option>
+                      <option>Lenguas Extranjeras para los Negocios</option>
+                      <option>Negocios Turísticos</option>
+                      <option>Comercio Exterior y Derecho Aduanero</option>
+                      <option>Derecho</option>
+                    </optgroup>
+                    <optgroup label="── Maestrías en Línea ──">
+                      <option>Maestría en Administración en Proyectos Empresariales</option>
+                      <option>Maestría en Administración y Dirección de Negocios</option>
+                      <option>Maestría en Docencia y Orientación Escolar</option>
+                      <option>Maestría en Imagen y Relaciones Públicas</option>
+                      <option>Maestría en Logística Internacional</option>
+                      <option>Maestría en Mercadotecnia</option>
+                    </optgroup>
+                    <optgroup label="── Otros programas ──">
+                      <option>Prepa UMAD</option>
+                      <option>UMAD Online</option>
+                      <option>Centro de Idiomas (CEL)</option>
+                      <option>Educación Continua / Diplomados</option>
+                      <option>Intercambios Internacionales</option>
+                      <option>Prácticas Profesionales</option>
+                    </optgroup>
+                    <optgroup label="── Información general ──">
+                      <option>Becas y financiamiento</option>
+                      <option>Costos y pagos</option>
+                      <option>Proceso de admisión</option>
+                      <option>Otra consulta</option>
+                    </optgroup>
                   </select>
                 </div>
                 <div>

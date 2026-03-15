@@ -10,7 +10,6 @@ gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 export default function HeroSection() {
   const sectionRef = useRef<HTMLElement>(null);
-  const badgeRef   = useRef<HTMLDivElement>(null);
   const titleRef   = useRef<HTMLHeadingElement>(null);
   const subtitleRef = useRef<HTMLParagraphElement>(null);
   const ctaRef     = useRef<HTMLDivElement>(null);
@@ -19,7 +18,6 @@ export default function HeroSection() {
     const trigger = { trigger: sectionRef.current, start: 'top bottom' };
     const ease    = 'power2.out';
 
-    gsap.from(badgeRef.current,    { opacity: 0, y: 40, scale: 0.8, duration: 0.9, delay: 0,    ease, scrollTrigger: trigger });
     gsap.from(titleRef.current,    { opacity: 0, y: 40,             duration: 0.9, delay: 0,    ease, scrollTrigger: trigger });
     gsap.from(subtitleRef.current, { opacity: 0, y: 40,             duration: 0.9, delay: 0.15, ease, scrollTrigger: trigger });
     gsap.from(ctaRef.current,      { opacity: 0, y: 40,             duration: 0.9, delay: 0.3,  ease, scrollTrigger: trigger });
@@ -44,15 +42,6 @@ export default function HeroSection() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-20 w-full">
         <div className="max-w-3xl">
-
-          {/* Tag */}
-          <div
-            ref={badgeRef}
-            className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-1.5 mb-6"
-          >
-            <span className="w-2 h-2 bg-umad-red rounded-full animate-pulse" />
-            <span className="text-white/90 text-sm font-medium">Admisiones abiertas 2026</span>
-          </div>
 
           {/* Headline */}
           <h1
@@ -91,25 +80,6 @@ export default function HeroSection() {
               Calcular mi beca
             </Link>
           </div>
-
-          {/* Quick stats */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            className="mt-16 flex flex-wrap gap-8"
-          >
-            {[
-              { value: '50+', label: 'Años de experiencia' },
-              { value: '30+', label: 'Programas académicos' },
-              { value: '15k+', label: 'Egresados' },
-            ].map(stat => (
-              <div key={stat.label}>
-                <p className="font-display font-bold text-3xl text-white">{stat.value}</p>
-                <p className="text-white/60 text-sm mt-0.5">{stat.label}</p>
-              </div>
-            ))}
-          </motion.div>
         </div>
       </div>
 
