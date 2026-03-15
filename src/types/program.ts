@@ -7,7 +7,8 @@ export type ProgramCategory =
   | 'UMAD Online'
   | 'Educación Continua'
   | 'Intercambios'
-  | 'Prácticas Profesionales';
+  | 'Prácticas Profesionales'
+  | 'Training Model';
 
 export type Faculty =
   | 'Ingenierías'
@@ -25,7 +26,7 @@ export interface Program {
   shortName: string;
   faculty: Faculty;
   level: ProgramLevel;
-  category: ProgramCategory;
+  category?: ProgramCategory;
   modalities: Modality[];
   durationSemesters: number;
   description: string;
