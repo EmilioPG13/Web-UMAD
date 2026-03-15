@@ -21,7 +21,7 @@ function formatDate(iso: string) {
 }
 
 export default function NewsSection() {
-  const [featured, ...rest] = newsArticles.slice(0, 3);
+  const articles = newsArticles.slice(0, 3);
   const containerRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
@@ -43,80 +43,49 @@ export default function NewsSection() {
   return (
     <section className="py-20 bg-umad-cream">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-12 gap-4">
+        <div className="mb-12">
           <SectionHeading title="Noticias y eventos" subtitle="Mantente al día con la vida universitaria de UMAD." />
         </div>
 
-        {/* Editorial layout: featured 2/3 + sidebar 1/3 */}
-        <div ref={containerRef} className="flex flex-col lg:flex-row gap-6">
-
-          {/* Featured card — 2/3 width */}
-          <article className="news-card lg:w-2/3 bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow group">
-            <div className="aspect-[4/3] overflow-hidden">
-              <img
-                src={featured.imageUrl}
-                alt={featured.title}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                onError={(e) => {
-                  e.currentTarget.src = 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&q=80';
-                }}
-              />
-            </div>
-            <div className="p-6">
-              <div className="flex items-center justify-between mb-3">
-                <Badge label={featured.category} colorClass={categoryColors[featured.category]} />
-                <span className="flex items-center gap-1 text-gray-400 text-xs">
-                  <Calendar className="w-3 h-3" />
-                  {formatDate(featured.publishedAt)}
-                </span>
+        <div ref={containerRef} className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {articles.map(article => (
+            <article
+              key={article.id}
+              className="news-card bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow group flex flex-col"
+            >
+              <div className="aspect-video overflow-hidden">
+                <img
+                  src={article.imageUrl}
+                  alt={article.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  onError={(e) => {
+                    e.currentTarget.src = 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&q=80';
+                  }}
+                />
               </div>
-              <h3 className="font-display font-semibold text-umad-navy text-xl leading-snug mb-2 group-hover:text-umad-red transition-colors">
-                {featured.title}
-              </h3>
-              <p className="text-gray-500 text-sm leading-relaxed line-clamp-3">{featured.excerpt}</p>
-              <button className="mt-4 text-umad-red text-sm font-semibold flex items-center gap-1 hover:gap-2 transition-all">
-                Leer más <ArrowRight className="w-3.5 h-3.5" />
-              </button>
-            </div>
-          </article>
-
-          {/* Sidebar — 1/3 width, two cards stacked */}
-          <div className="lg:w-1/3 flex flex-col gap-6">
-            {rest.map(article => (
-              <article
-                key={article.id}
-                className="news-card bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow group"
-              >
-                <div className="aspect-video overflow-hidden">
-                  <img
-                    src={article.imageUrl}
-                    alt={article.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    onError={(e) => {
-                      e.currentTarget.src = 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&q=80';
-                    }}
-                  />
+              <div className="p-6 flex flex-col flex-1">
+                <div className="flex items-center justify-between mb-3">
+                  <Badge label={article.category} colorClass={categoryColors[article.category]} />
+                  <span className="flex items-center gap-1 text-gray-400 text-xs">
+                    <Calendar className="w-3 h-3" />
+                    {formatDate(article.publishedAt)}
+                  </span>
                 </div>
-                <div className="p-5">
-                  <div className="flex items-center justify-between mb-3">
-                    <Badge label={article.category} colorClass={categoryColors[article.category]} />
-                    <span className="flex items-center gap-1 text-gray-400 text-xs">
-                      <Calendar className="w-3 h-3" />
-                      {formatDate(article.publishedAt)}
-                    </span>
-                  </div>
-                  <h3 className="font-display font-semibold text-umad-navy text-base leading-snug mb-2 group-hover:text-umad-red transition-colors">
-                    {article.title}
-                  </h3>
-                  <p className="text-gray-500 text-sm leading-relaxed line-clamp-2">{article.excerpt}</p>
-                  <button className="mt-4 text-umad-red text-sm font-semibold flex items-center gap-1 hover:gap-2 transition-all">
-                    Leer más <ArrowRight className="w-3.5 h-3.5" />
-                  </button>
-                </div>
-              </article>
-            ))}
-          </div>
-
+                <h3 className="font-display font-semibold text-umad-navy text-base leading-snug mb-2 group-hover:text-umad-red transition-colors">
+                  {article.title}
+                </h3>
+                <p className="text-gray-500 text-sm leading-relaxed line-clamp-3 flex-1">{article.excerpt}</p>
+                <a
+                  href="https://umad.edu.mx/noticias/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-4 text-umad-red text-sm font-semibold flex items-center gap-1 hover:gap-2 transition-all"
+                >
+                  Leer más <ArrowRight className="w-3.5 h-3.5" />
+                </a>
+              </div>
+            </article>
+          ))}
         </div>
       </div>
     </section>

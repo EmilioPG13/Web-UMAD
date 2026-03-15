@@ -1,4 +1,4 @@
-import { Heart, Shield, Users, Sparkles, UserCircle, Leaf } from 'lucide-react';
+import { Heart, Shield, Users, Sparkles, CircleUser, Leaf } from 'lucide-react';
 import PageWrapper from '../components/layout/PageWrapper';
 import SectionHeading from '../components/ui/SectionHeading';
 import ScrollReveal from '../components/ui/ScrollReveal';
@@ -8,7 +8,7 @@ const valores = [
   { icon: Heart,       label: 'Generosidad',           desc: 'Disposición para compartir conocimiento, tiempo y recursos con la comunidad.' },
   { icon: Users,       label: 'Solidaridad',           desc: 'Apoyo mutuo entre estudiantes, docentes y egresados como comunidad universitaria.' },
   { icon: Sparkles,    label: 'Espiritualidad',        desc: 'Formación integral que reconoce la dimensión espiritual del ser humano.' },
-  { icon: UserCircle,  label: 'Dignidad Humana',       desc: 'Respeto irrestricto a toda persona sin distinción de raza, género o condición económica.' },
+  { icon: CircleUser,  label: 'Dignidad Humana',       desc: 'Respeto irrestricto a toda persona sin distinción de raza, género o condición económica.' },
   { icon: Leaf,        label: 'Sostenibilidad',        desc: 'Compromiso con un desarrollo responsable que cuide el entorno para generaciones futuras.' },
 ];
 

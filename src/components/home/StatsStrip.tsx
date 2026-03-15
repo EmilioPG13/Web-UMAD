@@ -10,7 +10,7 @@ gsap.registerPlugin(ScrollTrigger, useGSAP);
 const stats = [
   { icon: Building2, value: 50,    suffix: '+', label: 'Años de trayectoria'   },
   { icon: BookOpen,  value: 30,    suffix: '+', label: 'Programas académicos'  },
-  { icon: Users,     value: 15,    suffix: '+', label: 'Egresados activos', format: 'k' },
+  { icon: Users,     value: 15,    suffix: 'k+', label: 'Egresados activos' },
   { icon: Award,     value: 85,    suffix: '%', label: 'Tasa de empleabilidad' },
 ];
 
@@ -23,7 +23,6 @@ export default function StatsStrip() {
     counters.forEach((el, i) => {
       const target = Number(el.dataset.target ?? 0);
       const suffix = el.dataset.suffix ?? '';
-      const isK    = el.dataset.format === 'k';
 
       const obj = { val: 0 };
 
@@ -39,7 +38,7 @@ export default function StatsStrip() {
         },
         onUpdate() {
           const v = Math.round(obj.val);
-          el.textContent = isK ? `${v}k${suffix}` : `${v}${suffix}`;
+          el.textContent = `${v}${suffix}`;
         },
       });
     });
@@ -66,9 +65,8 @@ export default function StatsStrip() {
                   className="stat-number"
                   data-target={s.value}
                   data-suffix={s.suffix}
-                  data-format={s.format ?? ''}
                 >
-                  {s.format === 'k' ? `0k${s.suffix}` : `0${s.suffix}`}
+                  {`0${s.suffix}`}
                 </span>
               </p>
               <p className="text-gray-500 text-sm mt-1">{s.label}</p>

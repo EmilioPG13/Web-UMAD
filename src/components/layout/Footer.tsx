@@ -113,7 +113,7 @@ export default function Footer() {
               </p>
             </div>
             <div className="flex gap-5 mt-7 text-white/70">
-              <a href="https://www.facebook.com/universidadmaderopuebla" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="hover:text-white transition-colors">
+              <a href="https://www.facebook.com/umadpuebla" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="hover:text-white transition-colors">
                 <Facebook className="w-5 h-5" />
               </a>
               <a href="https://x.com/umadpuebla" target="_blank" rel="noopener noreferrer" aria-label="X" className="hover:text-white transition-colors">
@@ -133,7 +133,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 pt-6 border-t border-white/10 flex flex-col sm:flex-row justify-center items-center gap-1 text-sm text-white/40">
-          <span>Derechos reservados © 2022</span>
+          <span>Derechos reservados © {new Date().getFullYear()}</span>
           <a href="#" className="text-white/70 hover:text-white transition-colors ml-2">Aviso de privacidad</a>
           <span>,</span>
           <a href="#" className="text-white/70 hover:text-white transition-colors">Código de Ética</a>

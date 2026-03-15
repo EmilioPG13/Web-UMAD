@@ -3,7 +3,7 @@ import { Calculator, CheckCircle } from 'lucide-react';
 import ScrollReveal from '../ui/ScrollReveal';
 
 const perks = [
-  'Becas desde 10% hasta 50% en colegiatura',
+  'Subsidios desde 10% hasta 75% en colegiatura',
   'Descuentos por excelencia académica',
   'Convenios con empresas',
   'Beca familiar para hermanos UMAD',
