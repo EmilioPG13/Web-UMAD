@@ -30,7 +30,7 @@ export default function HeroSection() {
         className="absolute inset-0 z-0 bg-umad-navy-dark"
         style={{
           backgroundImage:
-            'url("https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1920&q=80")',
+            'url("https://cloudfront-us-east-1.images.arcpublishing.com/eluniversal/YOHGRXKSFNDFNB7HM5GYRRZDVQ.jpg")',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}

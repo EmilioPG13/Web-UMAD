@@ -27,7 +27,7 @@ export const programs: Program[] = [
     durationSemesters: 9,
     description: 'Protege infraestructuras digitales y administra redes empresariales mediante ciberseguridad, análisis de riesgos y administración de sistemas.',
     accentColor: 'bg-cyan-600',
-    imageUrl: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=600&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600&q=80',
     featured: false,
   },
   {
@@ -41,7 +41,7 @@ export const programs: Program[] = [
     durationSemesters: 9,
     description: 'Optimiza procesos, costos y productividad integrando ingeniería de procesos, análisis financiero y mejora continua para organizaciones competitivas.',
     accentColor: 'bg-cyan-600',
-    imageUrl: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=600&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&q=80',
     featured: false,
   },
   {
@@ -69,7 +69,7 @@ export const programs: Program[] = [
     durationSemesters: 9,
     description: 'Desarrolla productos funcionales, estéticos y sostenibles combinando creatividad, prototipado, ergonomía y enfoque en usuario.',
     accentColor: 'bg-cyan-600',
-    imageUrl: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=600&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&q=80',
     featured: false,
   },
 
@@ -85,7 +85,7 @@ export const programs: Program[] = [
     durationSemesters: 9,
     description: 'Combina diseño de moda con estrategia de marca, producción y comercialización para liderar proyectos en la industria creativa.',
     accentColor: 'bg-purple-600',
-    imageUrl: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80',
     featured: false,
   },
   {
@@ -113,7 +113,7 @@ export const programs: Program[] = [
     durationSemesters: 9,
     description: 'Gestiona reputación, comunicación institucional y estrategias de posicionamiento para marcas, empresas y figuras públicas.',
     accentColor: 'bg-purple-600',
-    imageUrl: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=600&q=80',
     featured: false,
   },
   {
@@ -127,7 +127,7 @@ export const programs: Program[] = [
     durationSemesters: 9,
     description: 'Produce contenidos audiovisuales y transmedia con enfoque estratégico para medios, publicidad y entornos digitales.',
     accentColor: 'bg-purple-600',
-    imageUrl: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=600&q=80',
     featured: false,
   },
   {
@@ -141,7 +141,7 @@ export const programs: Program[] = [
     durationSemesters: 9,
     description: 'Diseña espacios arquitectónicos y de interior con criterios funcionales, estéticos y sostenibles para contextos contemporáneos.',
     accentColor: 'bg-purple-600',
-    imageUrl: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600&q=80',
     featured: false,
   },
 
@@ -157,7 +157,7 @@ export const programs: Program[] = [
     durationSemesters: 9,
     description: 'Desarrolla liderazgo, gestión estratégica e innovación para crear y escalar modelos de negocio en mercados dinámicos.',
     accentColor: 'bg-amber-600',
-    imageUrl: 'https://images.unsplash.com/photo-1556761175-4b46a572b786?w=600&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80',
     featured: true,
   },
   {
@@ -201,7 +201,7 @@ export const programs: Program[] = [
     durationSemesters: 8,
     description: 'Desarrolla dominio multilingüe y competencias interculturales para docencia, traducción, comunicación y contextos globales.',
     accentColor: 'bg-green-600',
-    imageUrl: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&q=80',
     featured: false,
   },
   {
@@ -215,7 +215,7 @@ export const programs: Program[] = [
     durationSemesters: 8,
     description: 'Integra idiomas, negociación y visión empresarial para desenvolverse en comercio, servicios y entornos corporativos internacionales.',
     accentColor: 'bg-green-600',
-    imageUrl: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=600&q=80',
     featured: false,
   },
   {
@@ -275,7 +275,7 @@ export const programs: Program[] = [
     durationSemesters: 3,
     description: 'Especializa en planeación, ejecución y control de proyectos para impulsar resultados y rentabilidad en organizaciones.',
     accentColor: 'bg-slate-600',
-    imageUrl: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=600&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&q=80',
     featured: false,
   },
   {
@@ -289,7 +289,7 @@ export const programs: Program[] = [
     durationSemesters: 3,
     description: 'Fortalece liderazgo directivo, estrategia y toma de decisiones para gestionar empresas en entornos competitivos.',
     accentColor: 'bg-slate-600',
-    imageUrl: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=600&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80',
     featured: false,
   },
   {
@@ -303,7 +303,7 @@ export const programs: Program[] = [
     durationSemesters: 3,
     description: 'Desarrolla capacidades pedagógicas y de acompañamiento para mejorar procesos de enseñanza y desarrollo estudiantil.',
     accentColor: 'bg-slate-600',
-    imageUrl: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=600&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600&q=80',
     featured: false,
   },
   {
@@ -317,7 +317,7 @@ export const programs: Program[] = [
     durationSemesters: 3,
     description: 'Profundiza en comunicación estratégica, reputación e imagen institucional para contextos corporativos y públicos.',
     accentColor: 'bg-slate-600',
-    imageUrl: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=600&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&q=80',
     featured: false,
   },
   {
@@ -331,7 +331,7 @@ export const programs: Program[] = [
     durationSemesters: 3,
     description: 'Especializa en cadena de suministro global, comercio internacional y operaciones logísticas de alto desempeño.',
     accentColor: 'bg-slate-600',
-    imageUrl: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=600&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?w=600&q=80',
     featured: false,
   },
   {
@@ -345,7 +345,7 @@ export const programs: Program[] = [
     durationSemesters: 3,
     description: 'Potencia la dirección de marketing con analítica, estrategia de marca y comunicación para mercados digitales y tradicionales.',
     accentColor: 'bg-slate-600',
-    imageUrl: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=600&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80',
     featured: false,
   },
 
@@ -361,7 +361,7 @@ export const programs: Program[] = [
     durationSemesters: 3,
     description: 'Forma traductores e intérpretes profesionales con dominio técnico, jurídico y literario en múltiples lenguas y contextos globales.',
     accentColor: 'bg-teal-600',
-    imageUrl: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=600&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?w=600&q=80',
     featured: false,
   },
 
@@ -435,7 +435,7 @@ export const programs: Program[] = [
     durationSemesters: 1,
     description: 'Modelo de vinculación empresarial único de UMAD. Conecta a los estudiantes con empresas reales desde el primer semestre para desarrollar competencias en escenarios auténticos.',
     accentColor: 'bg-orange-500',
-    imageUrl: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=600&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&q=80',
     featured: false,
   },
   {
@@ -449,7 +449,7 @@ export const programs: Program[] = [
     durationSemesters: 1,
     description: 'Diplomados, talleres y cursos de actualización profesional para seguir creciendo en tu campo.',
     accentColor: 'bg-orange-500',
-    imageUrl: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=600&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=600&q=80',
     featured: false,
   },
 ];
