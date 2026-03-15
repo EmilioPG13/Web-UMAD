@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Facebook, Instagram, Linkedin } from 'lucide-react';
 
 const XIcon = () => (
@@ -13,13 +14,50 @@ const TikTokIcon = () => (
 );
 
 const systemLogos = [
-  { src: '/media/logos/umad-logo-blanco.png',           alt: 'UMAD' },
-  { src: '/media/logos/logo-umad-escritorio.png',       alt: 'Universidad Madero' },
-  { src: '/media/logos/logo-imm-escritorio.png',        alt: 'Instituto Mexicano Madero' },
-  { src: '/media/logos/logo-prepa-escritorio.png',      alt: 'Prepa UMAD' },
-  { src: '/media/logos/logo-normal-escritorio.png',     alt: 'Instituto Normal México' },
-  { src: '/media/logos/logo-papaloapan-escritorio.png', alt: 'UMAD Campus Papaloapan' },
+  { src: '/media/logos/umad-logo-blanco.png',           alt: 'UMAD Online', href: 'https://online.umad.edu.mx/', sizeClassName: 'h-11' },
+  { src: '/media/logos/logo-umad-escritorio.png',       alt: 'Universidad Madero', href: 'https://umad.edu.mx/', sizeClassName: 'h-10' },
+  { src: '/media/logos/logo-imm-escritorio.png',        alt: 'Instituto Mexicano Madero', href: 'https://imm.edu.mx/', sizeClassName: 'h-11' },
+  { src: '/media/logos/logo-prepa-escritorio.png',      alt: 'Prepa UMAD', href: 'https://imm.edu.mx/prepa-umad/', sizeClassName: 'h-10' },
+  { src: '/media/logos/logo-normal-escritorio.png',     alt: 'Instituto Normal México', href: 'https://inm.edu.mx/', sizeClassName: 'h-11' },
+  { src: '/media/logos/logo-papaloapan-escritorio.png', alt: 'UMAD Campus Papaloapan', href: 'https://umadcup.edu.mx/', sizeClassName: 'h-11' },
 ];
+
+function SystemLogoLink({
+  src,
+  alt,
+  href,
+  sizeClassName,
+}: {
+  src: string;
+  alt: string;
+  href: string;
+  sizeClassName: string;
+}) {
+  const [showFallback, setShowFallback] = useState(false);
+
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={alt}
+      className="flex min-h-[5.5rem] w-full items-center justify-start rounded-xl px-4 py-3 hover:bg-white/5 hover:opacity-90 transition-all sm:justify-center"
+    >
+      {showFallback ? (
+        <span className="text-center font-display text-sm font-semibold uppercase tracking-[0.16em] text-white/90 sm:text-base">
+          {alt}
+        </span>
+      ) : (
+        <img
+          src={src}
+          alt={alt}
+          className={`${sizeClassName} w-auto object-contain object-left`}
+          onError={() => setShowFallback(true)}
+        />
+      )}
+    </a>
+  );
+}
 
 export default function Footer() {
   return (
@@ -29,19 +67,21 @@ export default function Footer() {
 
           {/* Left: Sistema Educativo Madero logos */}
           <div>
-            <div className="inline-block border border-white/60 px-5 py-2 mb-6">
-              <h2 className="font-display font-bold text-xs tracking-[0.25em] uppercase text-white">
-                Sistema Educativo Madero
-              </h2>
-            </div>
-            <div className="flex flex-col gap-6">
+            <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-5">
+              <div className="col-span-full mb-1">
+                <div className="inline-block border border-white/60 px-5 py-2">
+                  <h2 className="font-display font-bold text-xs tracking-[0.25em] uppercase text-white">
+                    Sistema Educativo Madero
+                  </h2>
+                </div>
+              </div>
               {systemLogos.map((logo) => (
-                <img
+                <SystemLogoLink
                   key={logo.alt}
                   src={logo.src}
                   alt={logo.alt}
-                  className="h-9 w-auto object-contain object-left"
-                  onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none'; }}
+                  href={logo.href}
+                  sizeClassName={logo.sizeClassName}
                 />
               ))}
             </div>
