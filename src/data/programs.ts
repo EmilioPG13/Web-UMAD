@@ -325,6 +325,36 @@ export const programs: Program[] = [
     featured: false,
   },
 
+  // ── MAESTRÍA PRESENCIAL ADICIONAL ─────────────────────
+  {
+    id: 'maestria-traduccion-interpretacion',
+    name: 'Maestría en Traducción e Interpretación',
+    shortName: 'Mtría. Traducción e Interpretación',
+    faculty: 'Ciencias Sociales',
+    level: 'Maestría',
+    category: 'Maestrías',
+    modalities: ['Presencial'],
+    durationSemesters: 3,
+    description: 'Forma traductores e intérpretes profesionales con dominio técnico, jurídico y literario en múltiples lenguas y contextos globales.',
+    accentColor: 'bg-teal-600',
+    featured: false,
+  },
+
+  // ── LICENCIATURA UMAD ONLINE ───────────────────────────
+  {
+    id: 'lic-psicologia-online',
+    name: 'Licenciatura en Psicología',
+    shortName: 'Psicología',
+    faculty: 'Ciencias Sociales',
+    level: 'Licenciatura',
+    category: 'UMAD Online',
+    modalities: ['En línea'],
+    durationSemesters: 9,
+    description: 'Comprende el comportamiento humano y desarrolla habilidades de diagnóstico, intervención y acompañamiento psicológico en modalidad flexible en línea.',
+    accentColor: 'bg-violet-500',
+    featured: false,
+  },
+
   // ── PROGRAMAS ESPECIALES ───────────────────────────────
   {
     id: 'intercambios-internacionales',
