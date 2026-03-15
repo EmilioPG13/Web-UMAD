@@ -1,37 +1,41 @@
-import type { Faculty } from '../../types';
+import type { Program, ProgramCategory } from '../../types';
 
-const ALL = 'Todas';
-type Filter = Faculty | typeof ALL;
+const ALL = 'Todas' as const;
+type Filter = ProgramCategory | typeof ALL;
+
+const categories: Filter[] = [
+  'Todas',
+  'Licenciaturas',
+  'Maestrías',
+  'UMAD Online',
+  'Intercambios',
+  'Prácticas Profesionales',
+  'Educación Continua',
+];
 
 interface Props {
   active: Filter;
   onChange: (f: Filter) => void;
+  programs: Program[];
 }
 
-const faculties: Filter[] = [
-  ALL,
-  'Ingenierías',
-  'Arte y Humanidades',
-  'Negocios',
-  'Ciencias Sociales',
-  'Comercio y Derecho',
-  'Posgrados en Línea',
-];
+export default function ProgramFilter({ active, onChange, programs }: Props) {
+  const countFor = (cat: Filter) =>
+    cat === 'Todas' ? programs.length : programs.filter(p => p.category === cat).length;
 
-export default function FacultyFilter({ active, onChange }: Props) {
   return (
-    <div className="flex flex-wrap gap-2 mb-10">
-      {faculties.map(f => (
+    <div className="flex flex-wrap gap-2 mb-6">
+      {categories.map(cat => (
         <button
-          key={f}
-          onClick={() => onChange(f)}
+          key={cat}
+          onClick={() => onChange(cat)}
           className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
-            active === f
+            active === cat
               ? 'bg-umad-navy text-white shadow-md'
               : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
           }`}
         >
-          {f}
+          {cat} ({countFor(cat)})
         </button>
       ))}
     </div>

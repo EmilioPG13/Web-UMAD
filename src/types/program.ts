@@ -1,5 +1,14 @@
 export type Modality = 'Presencial' | 'En línea' | 'Mixto';
 
+export type ProgramCategory =
+  | 'Licenciaturas'
+  | 'Maestrías'
+  | 'Prepa UMAD'
+  | 'UMAD Online'
+  | 'Educación Continua'
+  | 'Intercambios'
+  | 'Prácticas Profesionales';
+
 export type Faculty =
   | 'Ingenierías'
   | 'Arte y Humanidades'
@@ -16,6 +25,7 @@ export interface Program {
   shortName: string;
   faculty: Faculty;
   level: ProgramLevel;
+  category: ProgramCategory;
   modalities: Modality[];
   durationSemesters: number;
   description: string;

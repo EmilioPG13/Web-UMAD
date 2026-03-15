@@ -2,19 +2,19 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import PageWrapper from '../components/layout/PageWrapper';
 import SectionHeading from '../components/ui/SectionHeading';
-import FacultyFilter from '../components/programs/FacultyFilter';
+import ProgramFilter from '../components/programs/FacultyFilter';
 import FlipCard from '../components/programs/FlipCard';
 import { programs } from '../data/programs';
-import type { Faculty } from '../types';
+import type { ProgramCategory } from '../types';
 
-type Filter = Faculty | 'Todas';
+type Filter = ProgramCategory | 'Todas';
 
 export default function CarrerasPage() {
   const [activeFilter, setActiveFilter] = useState<Filter>('Todas');
 
   const filtered = activeFilter === 'Todas'
     ? programs
-    : programs.filter(p => p.faculty === activeFilter);
+    : programs.filter(p => p.category === activeFilter);
 
   return (
     <PageWrapper>
@@ -31,7 +31,15 @@ export default function CarrerasPage() {
 
       {/* Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
-        <FacultyFilter active={activeFilter} onChange={v => setActiveFilter(v as Filter)} />
+        <ProgramFilter
+          active={activeFilter}
+          onChange={v => setActiveFilter(v as Filter)}
+          programs={programs}
+        />
+
+        <p className="text-sm text-gray-500 mb-6">
+          Mostrando {filtered.length} programa{filtered.length !== 1 ? 's' : ''}
+        </p>
 
         <AnimatePresence mode="wait">
           <motion.div
